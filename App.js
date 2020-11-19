@@ -5,7 +5,6 @@ import Home from './src/View/home/home'
 export default function App() {
  
     return (
-      <Home />
     );
   
 }
