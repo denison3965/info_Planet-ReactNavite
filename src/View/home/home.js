@@ -1,7 +1,8 @@
 import React from 'react';
-import {Text, View,StyleSheet, Image, StatusBar, SafeAreaView } from 'react-native';
+import {Text, View,StyleSheet, Image, StatusBar, SafeAreaView, TouchableOpacity} from 'react-native';
+import {Ionicons} from '@expo/vector-icons';
 
-export default function Home() {
+export default function Home({ navigation }) {
     return (
       <SafeAreaView> 
          <StatusBar barStyle = "light-content" />
@@ -16,6 +17,25 @@ export default function Home() {
       <View style = {styles.elipse}> 
       </View>
 
+        
+      <View style= {styles.arrow}> 
+      <TouchableOpacity>
+          <Ionicons name = "ios-contacts" size = {50} color = "#000"/>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+        onPress={() => navigation.navigate('Desenvolvedores')}
+        > 
+          <Ionicons name = "ios-arrow-forward" size = {50} color = "#000"/>
+        </TouchableOpacity>
+      </View>
+
+      <View style = {styles.info}>
+        <Text>
+          ALGUMA COISA ESCRITA AQUI 
+        </Text>
+      </View>
+    
       </SafeAreaView>
 
     );
@@ -28,10 +48,20 @@ export default function Home() {
       height: 450,
     },
     elipse:{
+      flexDirection: "row",
       backgroundColor: '#FFF',
       marginTop: -40,
       borderTopRightRadius: 70,
       borderTopLeftRadius: 70,
       height: 40,
+    },
+    arrow:{
+      fontSize: 50,
+      color: '#000',
+      alignItems: 'flex-end',
+      flexDirection: 'row',
+     justifyContent: 'space-between',
+     marginLeft: 10,
+     marginRight: 15,
     }
   });
